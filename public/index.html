@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvaliacaoDev</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <Header>
+       <h1>
+         <br>  
+       </h1> 
+    </Header>
+    <section id="sec1">
+        <form>
+            <div>
+                <p>
+                    <label for="salaN" id="num">Sala N:</label ><br>
+                    <input type="text" id="salaN" name="salaN"><br>
+                    <span id="instr">Adicione os numeros separados por virgula (,)</span> 
+                </p>
+                <p>
+                    <label for="salaS" id="letra">Sala S:</label><br>
+                    <input type="text" id="salaS" name="salaS"><br>
+                    <span id="instr">Adicione as letras separadas por virgula (,)</span> 
+                </p>
+                <p><input type="button" value="ordenar" onclick="postRequest()"></p>
+                <div id="res1">
+                    Ordenando...
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="sec2">
+        <form>
+            <div>
+                <p>
+                    <label for="intervaloA" id="intervaloA">Primeiro Intervalo:</label ><br>
+                    <input type="text" id="interA" name="intervaloA"><br>
+                    <span id="instr">Digite o mínimo e o máximo separados por vírgula (,) sem espaço</span> 
+                </p>
+                <p>
+                    <label for="intervaloB" id="intervaloB">Segundo Intervalo:</label><br>
+                    <input type="text" id="interB" name="intervaloB"><br>
+                    <span id="instr">Digite o mínimo e o máximo separados por vírgula (,) sem espaço</span> 
+                </p>
+                <p><input type="button" value="validar" onclick="getRequest()"></p>
+                <div id="res2">
+                    Validando...
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy;byMaKuntz</p>
+    </footer>
+    
+</body>
+</html>
