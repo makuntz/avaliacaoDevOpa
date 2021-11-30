@@ -18,26 +18,31 @@ app.get('/interlace', (req, res) => {
     const validar = (bodyPosted) => {
         const interA = bodyPosted.intervaloA.split(',')
         const interB = bodyPosted.intervaloB.split(',')
-    
-        if (interA[0] == interB[0] || interA[0] == interB[1] || interA[1] == interB[0] || interA[1] == interB[1]) {
-            return true
-        }
-    
+
         let intervMenorMin = interA
         let intervMaiorMin = interB
-        if (interA[0] > interB[0]) {
+        const menormin = parseInt(intervMenorMin[0])
+        const menormax = parseInt(intervMenorMin[1])
+        const maiormin = parseInt(intervMaiorMin[0])
+        const maiormax = parseInt(intervMaiorMin[1])
+
+        if(menormin == maiormin || menormin == maiormax || menormax == maiormin || menormax == maiormax) {
+            return true
+        }
+        
+        if(menormin > maiormin) {
             intervMenorMin = interB
             intervMaiorMin = interA
         }
     
-        if (intervMaiorMin[0] < intervMenorMin[1]) {
+        if(maiormin < menormax) {
             return true
         }
     
         return false
     }
     const validado = validar(body)
-
+    
     res.send(validado)
 })
 
